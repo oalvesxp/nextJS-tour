@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import nookies from 'nookies'
 import React from 'react'
 import style from './Form.module.css'
+import Button from '../Button'
 
 export default function Form() {
   const [passwd, setPasswd] = React.useState()
@@ -37,9 +38,7 @@ export default function Form() {
           onChange={(e) => setPasswd(e.target.value)}
         />
 
-        <button className={style.button} type="submit">
-          Acessar
-        </button>
+        <Button type="submit">Acessar</Button>
       </form>
     </>
   )
