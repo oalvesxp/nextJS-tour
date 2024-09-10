@@ -1,5 +1,5 @@
 .container {
-  border: 1px solid #f9703e;
+  border: 1px solid #006799;
   display: flex;
   flex-direction: column;
   max-width: 100%;
@@ -8,7 +8,7 @@
   margin-right: 16px;
   padding: 32px;
   border-radius: 4px;
-  box-shadow: 1px 1px 5px 0 rgba(255, 69, 0, 0.2);
+  box-shadow: 1px 1px 5px 0 rgba(94, 94, 94, 0.2);
 }
 
 @media (min-width: 600px) {
