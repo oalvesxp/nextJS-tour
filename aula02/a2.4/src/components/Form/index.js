@@ -16,13 +16,14 @@ export default function Form() {
 
           if (passwd) {
             nookies.set(null, 'SECRET_PASSWD', passwd, {
-              maxAge: 30 * 24 * 60 * 60,
+              // maxAge: 30 * 24 * 60 * 60,
+              maxAge: 10,
               path: '/',
             })
 
             router.push('/private')
           } else {
-            alert('Senha incorreta!')
+            alert('Informe uma senha!')
           }
         }}
       >
