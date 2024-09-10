@@ -24,6 +24,7 @@ export const getStaticProps = async (context) => {
       date: `${post.date}`,
       content: `${post.content}`,
     },
+    revalidate: 10,
   }
 }
 
