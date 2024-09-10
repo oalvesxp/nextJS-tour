@@ -1,5 +1,12 @@
 import Link from 'next/link'
 
+// export async function getStaticProps() {
+export async function getServerSideProps() {
+  return {
+    props: {},
+  }
+}
+
 export default function Page() {
   return (
     <>
