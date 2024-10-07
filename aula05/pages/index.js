@@ -17,6 +17,21 @@ export default function HomePage() {
           <button type="submit">Registrar</button>
         </form>
       </div>
+      <div>
+        <h2>Lista de registros</h2>
+        <table>
+          <thead>
+            <td>Nome</td>
+            <td>Idade</td>
+            <td>E-mail</td>
+          </thead>
+          <tbody>
+            <td>Fulado de Tal</td>
+            <td>15 anos</td>
+            <td>teste@teste.com</td>
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }
