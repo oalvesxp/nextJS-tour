@@ -1,61 +1,34 @@
 import React, { useState } from 'react'
 
 export default function HomePage() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [age, setAge] = useState(0)
+  const [task, setTask] = useState('')
 
-  const [user, setUser] = useState({})
+  const [list, setList] = useState({})
 
   function handleRegister(e) {
     e.preventDefault()
 
     alert('Cadastro realizado com sucesso!')
 
-    setUser({
-      userName: name,
-      userMail: email,
-      userAge: age,
+    setList({
+      item: task,
     })
   }
 
   return (
     <>
       <div className="form__container">
-        <h1>Cadastro de usuário</h1>
+        <h1>Cadastro de tarefas</h1>
 
         <form onSubmit={handleRegister} className="form__controller">
           <div className="form__controller_field">
-            <label htmlFor="name">Nome</label>
+            <label htmlFor="name">Nova tarefa</label>
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={task}
+              onChange={(e) => setTask(e.target.value)}
               type="text"
               id="name"
               placeholder="Digite seu nome"
-              required
-            />
-          </div>
-
-          <div className="form__controller_field">
-            <label htmlFor="email">e-Mail</label>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              id="email"
-              placeholder="email@xpto.com.br"
-              required
-            />
-          </div>
-
-          <div className="form__controller_field">
-            <label htmlFor="age">Idade</label>
-            <input
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              type="number"
-              id="age"
               required
             />
           </div>
@@ -64,20 +37,15 @@ export default function HomePage() {
         </form>
       </div>
       <div className="table-container">
-        <h2>Lista de registros</h2>
         <table className="table__control">
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Idade</th>
-              <th>E-mail</th>
+              <th>Tarefas Registradas</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{user.userName}</td>
-              <td>{user.userMail}</td>
-              <td>{user.userAge}</td>
+              <td>{list.item}</td>
             </tr>
           </tbody>
         </table>
