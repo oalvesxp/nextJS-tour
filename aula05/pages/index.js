@@ -10,12 +10,13 @@ export default function HomePage() {
   function handleRegister(e) {
     e.preventDefault()
 
+    alert('Cadastro realizado com sucesso!')
+
     setUser({
       userName: name,
       userMail: email,
       userAge: age,
     })
-    alert('registrado')
   }
 
   return (
