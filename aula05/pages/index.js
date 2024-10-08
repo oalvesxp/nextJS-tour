@@ -5,9 +5,16 @@ export default function HomePage() {
   const [email, setEmail] = useState('')
   const [age, setAge] = useState(0)
 
+  const [user, setUser] = useState({})
+
   function handleRegister(e) {
     e.preventDefault()
 
+    setUser({
+      userName: name,
+      userMail: email,
+      userAge: age,
+    })
     alert('registrado')
   }
 
@@ -67,9 +74,9 @@ export default function HomePage() {
           </thead>
           <tbody>
             <tr>
-              <td>Fulado de Tal</td>
-              <td>15 anos</td>
-              <td>teste@teste.com</td>
+              <td>{user.userName}</td>
+              <td>{user.userMail}</td>
+              <td>{user.userAge}</td>
             </tr>
           </tbody>
         </table>
