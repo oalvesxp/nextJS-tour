@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Container } from '../components/ui/Container'
 
 function Page() {
   const [nutri, setNutri] = useState([])
@@ -18,14 +19,14 @@ function Page() {
 
   return (
     <>
-      <div className="container">
+      <Container>
         <header>
           <strong>Next Nutri</strong>
         </header>
         <main>
           {nutri.map((item) => (
-            <div className="container__post">
-              <article key={item.id} className="post">
+            <div key={item.id} className="container__post">
+              <article className="post">
                 <h2 className="post__title">{item.titulo}</h2>
                 <img
                   src={item.capa}
@@ -40,7 +41,7 @@ function Page() {
             </div>
           ))}
         </main>
-      </div>
+      </Container>
     </>
   )
 }
