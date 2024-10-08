@@ -1,10 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function HomePage() {
+  /** Variables useState */
   const [input, setInput] = useState('')
-
   const [task, setTask] = useState([])
 
+  /** When page is loaded */
+  useEffect(() => {
+    const sotrageTasks = localStorage.getItem('@tasks')
+    if (sotrageTasks) setTask(JSON.parse(sotrageTasks))
+  }, [])
+
+  /** When taks is modified */
+  useEffect(() => {
+    localStorage.setItem('@tasks', JSON.stringify(task))
+  }, [task])
+
+  /** Hydrate Task */
   function handleRegister(e) {
     e.preventDefault()
     setTask([...task, input])
