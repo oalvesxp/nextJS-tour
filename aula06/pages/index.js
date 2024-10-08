@@ -24,14 +24,20 @@ function Page() {
         </header>
         <main>
           {nutri.map((item) => (
-            <article key={item.id} className="post">
-              <h2 className="post__title">{item.titulo}</h2>
-              <img src={item.capa} alt={item.titulo} className="post__cover" />
-              <p className="post__subtitle">{item.subtitulo}</p>
-              <a href="#" className="button">
-                Acessar
-              </a>
-            </article>
+            <div className="container__post">
+              <article key={item.id} className="post">
+                <h2 className="post__title">{item.titulo}</h2>
+                <img
+                  src={item.capa}
+                  alt={item.titulo}
+                  className="post__cover"
+                />
+                <p className="post__subtitle">{item.subtitulo}</p>
+                <a href="#" className="post__button">
+                  Acessar
+                </a>
+              </article>
+            </div>
           ))}
         </main>
       </div>
