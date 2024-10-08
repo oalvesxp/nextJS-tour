@@ -5,12 +5,18 @@ export default function HomePage() {
   const [email, setEmail] = useState('')
   const [age, setAge] = useState(0)
 
+  function handleRegister(e) {
+    e.preventDefault()
+
+    alert('registrado')
+  }
+
   return (
     <>
       <div className="form__container">
         <h1>Cadastro de usuário</h1>
 
-        <form className="form__controller">
+        <form onSubmit={handleRegister} className="form__controller">
           <div className="form__controller_field">
             <label htmlFor="name">Nome</label>
             <input
@@ -18,6 +24,7 @@ export default function HomePage() {
               onChange={(e) => setName(e.target.value)}
               type="text"
               id="name"
+              placeholder="Digite seu nome"
               required
             />
           </div>
@@ -29,6 +36,7 @@ export default function HomePage() {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               id="email"
+              placeholder="email@xpto.com.br"
               required
             />
           </div>
