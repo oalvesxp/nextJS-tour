@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
 
 export default function HomePage() {
-  const [task, setTask] = useState('')
+  const [input, setInput] = useState('')
 
-  const [list, setList] = useState({})
+  const [task, setTask] = useState([])
 
   function handleRegister(e) {
     e.preventDefault()
-
-    alert('Cadastro realizado com sucesso!')
-
-    setList({
-      item: task,
-    })
+    setTask([...task, input])
+    setInput('')
   }
 
   return (
@@ -24,8 +20,8 @@ export default function HomePage() {
           <div className="form__controller_field">
             <label htmlFor="name">Nova tarefa</label>
             <input
-              value={task}
-              onChange={(e) => setTask(e.target.value)}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
               type="text"
               id="name"
               placeholder="Digite seu nome"
@@ -44,9 +40,11 @@ export default function HomePage() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{list.item}</td>
-            </tr>
+            {task.map((item) => (
+              <tr key={item}>
+                <td>{item}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  height: auto;
   background-color: #f0f0f0;
 }
 
@@ -19,6 +19,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 300px;
+  margin-bottom: 50px;
 }
 
 .form__controller_field {
@@ -70,7 +71,7 @@ button:hover {
   margin-top: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 50vw;
-  height: 30vh;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
 }
